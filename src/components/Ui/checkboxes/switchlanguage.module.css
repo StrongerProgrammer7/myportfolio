@@ -1,0 +1,90 @@
+.switch 
+{
+  position: relative;
+  display: inline-block;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.switch > span 
+{
+  position: absolute;
+  top: 8px;
+  pointer-events: none;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0 rgb(0 0 0 / 6%);
+  width: 55%;
+  text-align: center;
+  transition: color 0.35s ease;
+}
+
+input.check_toggle_round_flat:checked ~ .off 
+{
+  color: #AFE80F;
+}
+
+input.check_toggle_round_flat:checked ~ .on 
+{
+  color: #7C7C7C;
+}
+
+.switch > span.on 
+{
+  left: 0;
+  padding-left: 2px;
+  color: #AFE80F;
+}
+
+.switch > span.off 
+{
+  right: 0;
+  padding-right: 4px;
+  color: #7C7C7C;
+}
+
+.check_toggle 
+{
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+
+.check_toggle + label 
+{
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+input.check_toggle_round_flat + label 
+{
+  width: 75px;
+  height: 30px;
+}
+
+input.check_toggle_round_flat + label::before, 
+input.check_toggle_round_flat + label::after 
+{
+  display: block;
+  position: absolute;
+  content: "";
+}
+
+input.check_toggle_round_flat + label::after 
+{
+  top: 4px;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  background: linear-gradient(90deg, rgba(100,189,227,1) 0%, rgba(34,40,180,1) 100%);
+  border-radius: 52px;
+}
+
+input.check_toggle_round_flat:checked + label::after 
+{
+  background: linear-gradient(270deg, rgba(100,189,227,1) 0%, rgba(34,40,180,1) 100%);
+}
