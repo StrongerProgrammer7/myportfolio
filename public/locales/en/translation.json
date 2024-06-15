@@ -1,0 +1,18 @@
+{
+	"header":
+	{
+		"myskills": "My skills",
+		"projects":"Project",
+		"aboutme":"About me"
+	},
+	"greeting":
+	{
+		"hi":"Hi",
+		"name":"I'm Zufar",
+		"webdev":"web developer"
+	},
+	"total":
+	{
+		"developer:":"developer"
+	}
+}

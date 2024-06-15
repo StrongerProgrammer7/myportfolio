@@ -1,6 +1,6 @@
 import { lazy } from "react";
 
-import RouterPath from "./ERouter";
+import { RouterPath } from "./enums";
 
 interface IRouterItem
 {

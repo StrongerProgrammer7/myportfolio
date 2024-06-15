@@ -1,5 +1,5 @@
 import { Route,Routes } from 'react-router-dom';
-import RoutesPath from "../utils/ERouter";
+import { RouterPath } from "../utils/enums";
 import routes from '../utils/Router';
 import Layout from './Layout';
 
@@ -7,7 +7,7 @@ const AppRouter = () =>
 {
 	return (
 		<Routes>
-			<Route path={RoutesPath.MAIN} element={<Layout />}>
+			<Route path={RouterPath.MAIN} element={<Layout />}>
 				{
 					routes.map((route) =>
 					{
