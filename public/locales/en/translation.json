@@ -11,6 +11,11 @@
 		"name":"I'm Zufar",
 		"webdev":"web developer"
 	},
+	"skill":
+	{
+		"find":"find skill by name",
+		"study":"I will definitely learn these skills!"
+	},
 	"total":
 	{
 		"developer:":"developer"
