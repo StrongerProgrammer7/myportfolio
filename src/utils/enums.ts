@@ -10,4 +10,11 @@ enum RouterPath
 	MAIN = "/"
 }
 
-export { Locales,RouterPath };
+enum TypeSkill
+{
+	FRONT = "front",
+	BACK = "back",
+	BASE = "base"
+}
+
+export { Locales,RouterPath,TypeSkill };
