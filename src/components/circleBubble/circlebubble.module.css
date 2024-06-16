@@ -1,0 +1,38 @@
+.circle
+{
+	position: relative;
+	border-radius: 50%;
+	width: 550px;
+	height: 550px;
+	margin:50px auto;
+}
+
+.circle__title
+{
+	font-size: 48px;
+	color:white;
+	font-weight: normal;
+}
+
+.circle_text 
+{
+	position: absolute;
+	top: 45%;
+	left: 48%;
+	transform-origin: 0 0;
+	white-space: nowrap;
+}
+
+
+.circle__bubble
+{
+	position: absolute;
+	z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+	background-image: url('/src/assets/ellipse1.png');
+}
+

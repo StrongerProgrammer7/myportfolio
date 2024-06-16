@@ -1,0 +1,21 @@
+.projects__background
+{
+	background-image: url('/src/assets/toDirectionDeep.jpg');
+}
+
+.projects_content
+{
+	padding-top: 25px;
+	padding-bottom:50px;
+}
+
+.projects_searching
+{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+
+	margin-top:20px;
+}
+
