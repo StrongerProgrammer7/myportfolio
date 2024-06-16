@@ -1,0 +1,33 @@
+	.arrow 
+	{
+	  height: 30px;
+	  width: 30px;
+	  position: absolute;
+	  top: 40%;
+	  z-index: 1;
+	}
+	  .arrow:hover 
+	  {
+		cursor: pointer;
+	  }
+
+	  .arrow_left 
+	  {
+		background-image: url("../../../../assets/arrow.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		margin-left: 120px;
+		transform: rotate(
+180deg);
+		left: 0;
+	  }
+
+	  .arrow_right 
+	  {
+		background-image: url("../../../../assets/arrow.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		margin-right: 120px;
+		right: 0;
+	  }
+	

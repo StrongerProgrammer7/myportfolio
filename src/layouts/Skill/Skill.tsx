@@ -12,10 +12,10 @@ import { setSkills } from "../../models/information";
 import skillsEN from "../../utils/data/skills";
 import { skillsRu } from "../../utils/data/skills";
 import Pattern from "../../components/pattern/Pattern";
-
+import background from "../../assets/Up.png";
 const Skill = () => 
 {
-	const skills = useTypedSelector((state) => state.skills);
+	const skills = useTypedSelector((state) => state.information.skills);
 	const dispatch = useAppDispatch();
 	const { t,i18n } = useTranslation();
 
@@ -107,10 +107,11 @@ const Skill = () =>
 
 	return (
 		<Pattern
+			img={background}
 			title={t("header.myskills")}
 			classNames={
 				{
-					background: css.myskills__background,
+					section: css.myskills,
 					block_content: css.myskills_content
 				}
 

@@ -2,6 +2,7 @@ import css from "./greeting.module.css";
 import logo from "../../assets/logoEng.png";
 import { useTranslation } from "react-i18next";
 import Pattern from "../../components/pattern/Pattern";
+import background from "../../assets/greeting.jpg";
 
 const Greeting = () => 
 {
@@ -9,6 +10,7 @@ const Greeting = () =>
 
 	return (
 		<Pattern
+			img={background}
 			classNames={
 				{
 					background: css.greeting__background,

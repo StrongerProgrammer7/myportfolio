@@ -5,6 +5,7 @@
 	width: 550px;
 	height: 550px;
 	margin:50px auto;
+	z-index: 2;
 }
 
 .circle__title
@@ -30,9 +31,9 @@
 	z-index: -1;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     width: 100%;
     height: 100%;
-	background-image: url('/src/assets/ellipse1.png');
+	background-image: url('/src/assets/ellipse2.png');
 }
 

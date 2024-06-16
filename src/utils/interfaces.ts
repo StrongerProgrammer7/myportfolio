@@ -10,7 +10,7 @@ export interface IProject
 	description: string;
 	stack: ISkill[],
 	name: string;
-	link: string;
+	link?: string;
 }
 
 export interface IInformation
@@ -19,4 +19,12 @@ export interface IInformation
 	projects: IProject[],
 	error?: unknown,
 	isLoad: boolean;
+}
+
+
+export interface ISlider
+{
+	goToSlide?: (number: number) => void;
+	items: IProject[];
+	slide: number;
 }

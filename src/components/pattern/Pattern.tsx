@@ -6,16 +6,19 @@ interface IPattern extends PropsWithChildren
 {
 	classNames:
 	{
-		background: string;
+		section?: string;
+		background?: string;
 		block_content: string;
 	};
+	img: string;
 	title?: string;
 }
-const Pattern = ({ classNames,title,children }: IPattern) =>
+const Pattern = ({ img,classNames,title,children }: IPattern) =>
 {
 	return (
-		<section className={css.block}>
-			<div className={`${css.block__background} ${classNames.background}`}></div>
+		<section className={`${css.block} ${classNames.section ?? ""}`}>
+			{/* <div className={`${css.block__background} ${classNames.background}`}></div> */}
+			<img src={img} className={`${css.block__background} ${classNames.background ?? ""}`} alt="background" />
 			<div className={"container " + classNames.block_content}>
 				{
 					title && <h1 className={css.block_content__title}>{title} </h1>

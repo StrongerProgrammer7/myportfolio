@@ -1,7 +1,11 @@
+.myskills
+{
+	min-height:800px;
+}
+
 .myskills__background
 {
-	background-image: url('/src/assets/Up.png');
-	min-height:600px;
+	/* background-image: url('/src/assets/Up.png'); */
 }
 
 .myskills_content

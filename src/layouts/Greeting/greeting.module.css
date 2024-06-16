@@ -1,6 +1,6 @@
 .greeting__background
 {
-	background-image: url('/src/assets/greeting.jpg'), linear-gradient(21deg, #f8a26114, #6e9fc91a);
+	/* background-image: url('/src/assets/greeting.jpg'), linear-gradient(21deg, #f8a26114, #6e9fc91a); */
 	filter: saturate(105%) contrast(125%) brightness(0.9);
 	background-blend-mode: color-burn;
 	
