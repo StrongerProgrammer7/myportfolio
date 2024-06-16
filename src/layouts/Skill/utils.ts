@@ -38,3 +38,20 @@ export const getRandomDelayAnim = (): string =>
 {
 	return `${Math.random()}s`;
 };
+
+
+export const getRandomRotateBlocks = (showSkills: ISkill[]): Set<number> =>
+{
+	const MAX = 5;
+	let ind = 0;
+
+	const newRotatingSkills = new Set<number>();
+	const numberOfSkillsToRotate = Math.floor(Math.random() * showSkills.length);
+	while (newRotatingSkills.size < numberOfSkillsToRotate && ind < MAX)
+	{
+		const randomIndex = Math.floor(Math.random() * showSkills.length);
+		ind++;
+		newRotatingSkills.add(randomIndex);
+	}
+	return newRotatingSkills;
+};
