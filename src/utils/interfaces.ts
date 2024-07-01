@@ -10,6 +10,7 @@ export interface IProject
 	description: string;
 	stack: ISkill[],
 	name: string;
+	briefly_name?: string;
 	link?: string;
 }
 

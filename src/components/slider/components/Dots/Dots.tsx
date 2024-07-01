@@ -1,10 +1,12 @@
 import Dot from "./Dot";
-import { useTypedSelector } from "../../../../hooks/useTypedSelector";
 import css from "./dots.module.css";
 
-export default function Dots()
+interface IDots
 {
-	const slidesCount = useTypedSelector((state) => state.slider.items.length);
+	slidesCount: number;
+}
+export default function Dots({ slidesCount }: IDots)
+{
 
 	const renderDots = () => 
 	{
