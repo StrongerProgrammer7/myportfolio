@@ -1,21 +1,18 @@
 import Dot from "./Dot";
-import { useTypedSelector } from "../../../../hooks/useTypedSelector";
 import css from "./dots.module.css";
 
-export default function Dots()
+interface IDots
 {
-	const slidesCount = useTypedSelector((state) => state.slider.items.length);
-
-	const renderDots = () => 
-	{
-		const dots = [];
-		for (let i = 0; i < slidesCount; i++)
+	slidesCount: number;
+}
+export default function Dots({ slidesCount }: IDots)
+{
+	return <div className={css.dots}>
 		{
-			dots.push(<Dot key={`dot-${i}`} number={i} classNames={{ dot: css.dot,selected: css.selected }} />);
+			new Array(slidesCount).fill(0).map((_,ind) =>
+			{
+				return <Dot key={`dot-${ind}`} number={ind} classNames={{ dot: css.dot,selected: css.selected }} />;
+			})
 		}
-
-		return dots;
-	};
-
-	return <div className={css.dots}>{renderDots()}</div>;
+	</div>;
 }

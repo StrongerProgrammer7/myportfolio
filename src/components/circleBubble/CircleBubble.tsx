@@ -10,9 +10,9 @@ const CircleBubble: FC<ICircleProject> = ({ titleProject,children }) =>
 	const textLength = titleProject.length;
 	const characters = titleProject.split('');
 	const countWords = titleProject.trim().split(' ').length;
-	const startStep = countWords > 1 ? 100 : 80;
-	const angleStep = startStep / (textLength - 0.5);
-	const startAngle = countWords > 1 ? 300 : 320;
+	const startStep = countWords > 1 ? 155 : 80;
+	const angleStep = startStep / (textLength - 1);
+	const startAngle = countWords > 1 ? 290 : 320;
 
 	return (
 		<div className={css.circle}>

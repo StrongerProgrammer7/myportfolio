@@ -8,10 +8,12 @@ import Arrows from "./components/Arrows/Arrows";
 import Dots from "./components/Dots/Dots";
 import SlidesList from "./components/SlidesList/SlidesList";
 import { useMediaQuery } from "react-responsive";
+import { IProject } from "../../utils/interfaces";
 
 
 interface ISliderComponent<T> extends PropsWithChildren
 {
+	items: IProject[];
 	width: string;
 	height: string;
 	autoPlayTime: number;
@@ -19,14 +21,14 @@ interface ISliderComponent<T> extends PropsWithChildren
 	data?: T[];
 }
 
-const Slider = <T,>({ width = "100%",height = "100%",autoPlay = false,autoPlayTime = 5000,children }: ISliderComponent<T>) =>
+const Slider = <T,>({ items,width = "100%",height = "100%",autoPlay = false,autoPlayTime = 5000,children }: ISliderComponent<T>) =>
 {
 	const isTabletOrMobile = useMediaQuery({ query: '(max-width: 800px)' });
 	const [isLoad,setIsLoad] = useState<boolean>(true);
-	const items = useTypedSelector((state) => state.slider.items);
 	const slide = useTypedSelector((state) => state.slider.slide);
 	const dispatch = useAppDispatch();
 	const [touchPosition,setTouchPosition] = useState<number | null>(null);
+	const [typeCursor,setTypeCursor] = useState<"default" | "col-resize">("default");
 
 	useEffect(() => 
 	{
@@ -50,6 +52,7 @@ const Slider = <T,>({ width = "100%",height = "100%",autoPlay = false,autoPlayTi
 
 	const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) =>
 	{
+		setTypeCursor("col-resize");
 		setTouchPosition(e.clientX);
 	};
 
@@ -60,11 +63,10 @@ const Slider = <T,>({ width = "100%",height = "100%",autoPlay = false,autoPlayTi
 
 		const currentPosition = e.clientX;
 		const direction = touchPosition - currentPosition;
-		console.log(direction);
+
 		const { max_right,max_left } = isTabletOrMobile ? { max_left: -10,max_right: 10 } : { max_left: -100,max_right: 100 };
 		if (direction >= max_right || direction <= max_left)
 		{
-			console.log("RS" + direction);
 			if (direction >= 10)
 				changeSlide(1);
 			else
@@ -78,6 +80,7 @@ const Slider = <T,>({ width = "100%",height = "100%",autoPlay = false,autoPlayTi
 		e.stopPropagation();
 		if (touchPosition !== null)
 			setTouchPosition(null);
+		setTypeCursor("default");
 	};
 
 	useEffect(() =>
@@ -99,7 +102,7 @@ const Slider = <T,>({ width = "100%",height = "100%",autoPlay = false,autoPlayTi
 		return <div>Loading...</div>;
 	return (
 		<div
-			style={{ width,height }}
+			style={{ width,height,cursor: typeCursor }}
 			className={css.slider}
 			onPointerDown={handlePointerDown}
 			onPointerMove={handlePointerMove}
@@ -109,7 +112,9 @@ const Slider = <T,>({ width = "100%",height = "100%",autoPlay = false,autoPlayTi
 			<SlidesList>
 				{children}
 			</SlidesList>
-			<Dots />
+			<Dots
+				slidesCount={items.length}
+			/>
 		</div>
 	);
 };

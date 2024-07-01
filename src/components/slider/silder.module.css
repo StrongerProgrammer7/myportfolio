@@ -1,8 +1,15 @@
 .slider 
 {
-	overflow: hidden;
+	/* overflow: hidden; */
 	position: relative;
 	margin: 0 auto;
+  -webkit-user-select: none;
+    /* user-select -- это нестандартное свойство */
+
+    -moz-user-select: none;
+    /* поэтому нужны префиксы */
+
+    -ms-user-select: none
 }
 .slider .slide_list 
 {
