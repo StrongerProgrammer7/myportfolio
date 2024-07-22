@@ -1,0 +1,26 @@
+.nav
+{
+    display: flex;
+    width: 100%;
+}
+.nav_list
+{
+	display: flex;
+	width: 100%;
+	justify-content: center;
+	flex-wrap: wrap;
+	font-size: var(--fz-medium);
+	color: var(--gray-li);
+	gap:60px;
+}
+
+@media screen and (max-width:768px) 
+{
+	.nav_list
+	{
+		gap:20px;
+		font-size: var(--fz-small);
+	}	
+}
+
+

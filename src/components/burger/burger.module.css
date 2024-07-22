@@ -1,0 +1,57 @@
+.burger
+{
+	position: relative;
+	width: 50px;
+	height: 2px;
+	background-color: white;
+	margin-right:10px;
+	transition:all 0.3s ease;
+}
+
+.burger::before
+{
+	content: '';
+	position: absolute;
+	width: inherit;
+	height:inherit;
+	background-color: inherit;
+	top:10px;
+}
+
+.burger::after
+{
+	content: '';
+	position: absolute;
+	width: inherit;
+	height:inherit;
+	background-color: inherit;
+	top:-10px;
+}
+
+.burger_click.burger
+{
+	border-radius: 50%;
+    border: 2px solid white;
+    background: transparent;
+    height: 50px;
+	transition:all 0.25s ease;
+}
+
+.burger_click.burger::after
+{
+	border-radius: inherit;
+    border: inherit;
+    width: 25px;
+    height: 25px;
+    top: 8.5px;
+    left: 8.4px;
+}
+.burger_click.burger::before
+{
+	background: white;
+    height: 3px;
+    width: 62px;
+    top: 21px;
+    left: -8px;
+    rotate: 45deg;
+}

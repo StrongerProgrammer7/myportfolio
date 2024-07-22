@@ -30,4 +30,24 @@
 		margin-right: 120px;
 		right: 0;
 	  }
-	
+@media screen and (max-width:900px) 
+{
+	.arrow_left
+	{
+		margin-left:0;
+	}
+	.arrow_right
+	{
+		margin-right:0;
+	}
+}
+
+@media screen and (max-width:480px) 
+{
+	.arrow 
+	{
+		top:auto;
+		bottom:7%;
+		z-index: 3;
+	}
+}

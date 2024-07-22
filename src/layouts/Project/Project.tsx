@@ -20,7 +20,7 @@ const Project = () =>
 	const items = useTypedSelector((state) => state.slider.items);
 	const dispatch = useAppDispatch();
 	const [showProjects,setShowProjects] = useState<IProject[]>([]);
-	const { i18n } = useTranslation();
+	const { t,i18n } = useTranslation();
 
 	useEffect(() =>
 	{
@@ -74,7 +74,7 @@ const Project = () =>
 			<div style={{ minHeight: "700px" }}>
 				<div className={css.projects_searching}>
 					<SimpleInputText
-						placeholder="find project by name"
+						placeholder={t("project.find_name")}
 						value={projectName}
 						setText={setProjectName}
 						onChange={handleChangeProjectName}
@@ -83,7 +83,7 @@ const Project = () =>
 						onChange={handleChangeSkill}
 						value={projectBySkill}
 						setText={setProjectBySkill}
-						placeholder="find project by skill"
+						placeholder={t("project.find_skill")}
 					/>
 				</div>
 				{

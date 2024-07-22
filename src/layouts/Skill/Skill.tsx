@@ -116,30 +116,31 @@ const Skill = () =>
 				}
 
 			}>
-			<div className={css.skills}>
-				<div className={css.skills_controls}>
-					<div className={css.skills_controls__filter}>
-						{
-							filters.map((filter,ind) => (
-								<SimpleRadio
-									key={ind}
-									defaultChecked={ind === 0}
-									value={filter.value}
-									label={filter.label}
-									colorText="white"
-									onChange={(val) => handleChange(val,true)}
-								/>
-							))
-						}
-					</div>
-					<SimpleInputText
-						setText={setSearch}
-						value={search}
-						placeholder={t("skill.find")}
-						onChange={handleChange}
-					/>
-
+			<div className={css.skills_controls}>
+				<div className={css.skills_controls__filter}>
+					{
+						filters.map((filter,ind) => (
+							<SimpleRadio
+								key={ind}
+								defaultChecked={ind === 0}
+								value={filter.value}
+								label={filter.label}
+								colorText="white"
+								onChange={(val) => handleChange(val,true)}
+							/>
+						))
+					}
 				</div>
+				<SimpleInputText
+					setText={setSearch}
+					value={search}
+					placeholder={t("skill.find")}
+					onChange={handleChange}
+				/>
+
+			</div>
+			<div className={css.skills}>
+
 				{
 					showSkills.length > 0 &&
 					<div className={css.skills_cards}>
@@ -147,7 +148,7 @@ const Skill = () =>
 							!isLoad
 								?
 								showSkills.map((skill,ind) => (
-									<div
+									<p
 										key={ind}
 										className={`${css.skills_cards__card} 
 											${getClassByTypeSkill(skill.type)} 
@@ -155,7 +156,7 @@ const Skill = () =>
 											${isFirstShow ? getRadnomDirectionAppearance() : ""}`}
 										style={{ animationDelay: `${getRandomDelayAnim()}` }}>
 										{skill.name}
-									</div>
+									</p>
 								))
 								:
 								<p>Loading...</p>

@@ -2,7 +2,7 @@
 .filter_control
 {
 	
-	font-size: 24px;
+	font-size: var(--fz-small);
 	line-height:1.1;
 	letter-spacing: 3px;
 
@@ -43,7 +43,7 @@
 	border-radius: 50%;
 	transform:scale(0);
 	transition: 0.5s transform ease-in-out;
-	box-shadow: inset 16px 16px #7DD012;
+	box-shadow: inset 16px 16px var(--liam-li);
 	background-color: CanvasText;
 }
 

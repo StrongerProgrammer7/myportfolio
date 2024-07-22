@@ -10,7 +10,7 @@
 
 .circle__title
 {
-	font-size: 48px;
+	font-size: 40px;
 	color:white;
 	font-weight: normal;
 }
@@ -18,7 +18,7 @@
 .circle_text 
 {
 	position: absolute;
-	top: 45%;
+	top: 48%;
 	left: 48%;
 	transform-origin: 0 0;
 	white-space: nowrap;
@@ -37,3 +37,19 @@
 	background-image: url('/src/assets/ellipse2.png');
 }
 
+@media screen and (max-width:700px) 
+{
+	.circle
+	{
+		width: 450px;
+		margin: 0 auto;
+	}
+	.circle__title
+	{
+		font-size: 18px;
+	}
+	.circle_text 
+	{
+		top:49%;
+	}
+}

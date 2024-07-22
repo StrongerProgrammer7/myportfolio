@@ -16,6 +16,11 @@
 		"find":"find skill by name",
 		"study":"I will definitely learn these skills!"
 	},
+	"project":
+	{
+		"find_skill":"find project by skill",
+		"find_name":"find project by name"
+	},
 	"total":
 	{
 		"developer":"developer"
