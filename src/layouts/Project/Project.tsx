@@ -13,9 +13,13 @@ import { project,projectEng } from "../../utils/data/projects";
 import { Locales } from "../../utils/enums";
 import { setItems,setSlide } from "../../models/slider";
 import BubbleContent from "../../components/bubble/content/BubbleContent";
+import { useMediaQuery } from "react-responsive";
+import Card from "../../components/card/Card";
+import { shuffleArray } from "../../utils/util";
 
 const Project = () => 
 {
+	const isMobile = useMediaQuery({ query: '(max-width:530px)' });
 	const [projectName,setProjectName] = useState<string>("");
 	const [projectBySkill,setProjectBySkill] = useState<string>("");
 	const items = useTypedSelector((state) => state.slider.items);
@@ -25,7 +29,7 @@ const Project = () =>
 
 	useEffect(() =>
 	{
-		setShowProjects(items);
+		setShowProjects(shuffleArray(items));
 	},[items]);
 
 	useEffect(() =>
@@ -96,15 +100,25 @@ const Project = () =>
 						width="100%"
 						items={showProjects} >
 						{
-							showProjects.map((project,ind) => (
-								<Bubble
-									title={project.briefly_name ?? project.name}
-									key={"project-slider-" + ind}>
-									<BubbleContent
-										item={project}
-									/>
-								</Bubble>
-							))
+							showProjects.map((project,ind) => 
+							{
+								return (
+									isMobile
+										?
+										<Card
+											key={"project-slider-" + ind}
+											item={project} />
+										:
+										<Bubble
+											title={project.briefly_name ?? project.name}
+											key={"project-slider-" + ind}>
+											<BubbleContent
+												item={project}
+											/>
+										</Bubble>
+								);
+
+							})
 						}
 
 					</Slider>

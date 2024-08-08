@@ -7,9 +7,12 @@
 }
   .slide 
   {
-	flex: 1 0 100%;
-	position: relative;
-  z-index: 0;
+    flex: 1 0 100%;
+    position: relative;
+    z-index: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
   }
 
  @media screen and (max-width:480px) 

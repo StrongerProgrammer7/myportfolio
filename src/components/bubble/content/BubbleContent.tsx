@@ -1,6 +1,8 @@
 import React from 'react';
 import css from './bubblecontent.module.css';
 import { IProject } from '../../../utils/interfaces';
+import StackCard from '../../stack_card/StackCard';
+import Link from '../../Ui/a/link/Link';
 
 interface IBubbleContent
 {
@@ -16,16 +18,16 @@ const BubbleContent: React.FC<IBubbleContent> = ({ item }) =>
 				<div className={css.circle__content_stack}>
 					{
 						item.stack.map((elem,ind) => (
-							<span
+							<StackCard
 								key={"project-slider-stack-" + ind}
-								className={elem.type === "front" ? css.card_front : css.default_background}>
-								{elem.name}</span>
+								skill={elem}
+							/>
+
 						))
 					}
 				</div>
 				{
-					item.link &&
-					<a className={css.circle__content_btn} href={item.link}> More info </a>
+					item.link && <Link title='Go to repo' href={item.link} />
 				}
 			</div>
 

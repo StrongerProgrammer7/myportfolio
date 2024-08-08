@@ -1,0 +1,62 @@
+.card
+{
+	background: rgba(151, 224, 255, 0.4);
+    border-radius: 5px;
+    padding: 16px;
+    max-width: 400px;
+    margin: 20px auto 40px;
+
+	color: white;
+
+    text-align: center;
+}
+
+.card__wrapper_img
+{
+    max-width: 300px;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    padding: 16px 0px;
+}
+
+.card__title
+{
+    font-family: Arial;
+    font-size: 20px;
+}
+
+.card__content
+{
+
+}
+
+.content_text
+{
+	font-family: Arial;
+}
+
+.content__stack
+{
+	display: flex;
+    gap: 10px;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.content__stack span
+{
+	font-size: 16px;
+    color: white;
+    border-radius: 5px;
+    padding: 1px 10px;
+}
+
+.content__link
+{
+    width: 100%;
+    display: block;
+    border-radius: 0;
+    margin-top:20px;
+}

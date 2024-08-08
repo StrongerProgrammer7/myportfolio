@@ -1,0 +1,21 @@
+
+.btn
+{
+    padding: 2px 20px;
+    background: white;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 20px;
+    margin-top:50px;
+	color:black;
+	transition:transform linear 200ms, color ease 200ms;
+}
+.btn:hover
+{
+    color:#0093ff;
+}
+
+.btn:active
+{
+	transform:scale(0.9);
+}

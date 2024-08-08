@@ -45,39 +45,6 @@
     padding: 1px 10px;
 }
 
-.circle__content_btn
-{
-    padding: 2px 60px;
-    background: white;
-    border-radius: 16px;
-    cursor: pointer;
-    font-size: 20px;
-    margin-top:50px;
-	color:black;
-}
-.circle__content_btn:hover
-{
-    color:#2FC0FE;
-}
-.circle__content_btn:visited
-{
-	color:#7700ff;
-}
-
-.default_background
-{
-	background: #7700ff;
-}
-
-.card_front
-{
-	background: #2FC0FE;
-}
-
-.card_back
-{
-	background: #730CDA;
-}
 .circle__title
 {
     text-align: center;
