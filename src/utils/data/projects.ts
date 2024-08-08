@@ -1,5 +1,6 @@
 import { IProject } from "../interfaces";
 
+const PATH_IMG = 'src/assets/projects/';
 export const project: IProject[] = [
 	{
 		description: "NDA проект. Разработчик можешь создавать индивидуальные планы развития, компетенции, поиск ревьюера. Менеджер: подтверждение/отклонение компетенций своих разработчиком и просматривать информации о них. Каждый пользователь может изменять личную информации и кастомизацию страницы, просмотр всей необходимой информации в справочниках.",
@@ -35,7 +36,8 @@ export const project: IProject[] = [
 				{ name: "Solidity",type: "front" },
 				{ name: "TACT",type: "front" }
 			],
-		link: "https://github.com/StrongerProgrammer7/bridge_ton_eth_through_db"
+		link: "https://github.com/StrongerProgrammer7/bridge_ton_eth_through_db",
+		img: PATH_IMG + 'Medicine.png'
 	},
 	{
 		description: "Пользователь может создавать, изменять и удалять данные о погоде. Основная часть данных, включая информацию о погоде, заполненных данных и типе погоды, берется с сервера. Реализована функциональность для обеспечения интуитивного взаимодействия пользователей с данными о погоде, включая управление данными в режиме реального времени и обработку ошибок для улучшения пользовательского опыта.",
@@ -51,7 +53,8 @@ export const project: IProject[] = [
 				{ name: "axios",type: "front" },
 				{ name: "SCSS",type: "front" },
 			],
-		link: "https://github.com/StrongerProgrammer7/DataAboutWeather"
+		link: "https://github.com/StrongerProgrammer7/DataAboutWeather",
+		img: PATH_IMG + 'weather.png'
 	},
 	{
 		description: "Форма записывает данные в хранилище, после отправки данные отправляются на сервер. Реализована 'ленивая загрузка' и AuthGuard, предотвращающий повторный доступ к форме после завершения опроса.",
@@ -64,7 +67,8 @@ export const project: IProject[] = [
 				{ name: "Redux/persist",type: "front" },
 				{ name: "Vite",type: "front" },
 			],
-		link: "https://github.com/StrongerProgrammer7/DataAboutWeather"
+		link: "https://github.com/StrongerProgrammer7/rutube",
+		img: PATH_IMG + 'rutube.png'
 	},
 	{
 		description: "Динамическое создание записей в таблице с учетом иерархии, а также редактирование и удаление",
@@ -76,7 +80,8 @@ export const project: IProject[] = [
 				{ name: "SCSS",type: "front" },
 				{ name: "Vite",type: "front" },
 			],
-		link: "https://github.com/StrongerProgrammer7/DynamicTable"
+		link: "https://github.com/StrongerProgrammer7/DynamicTable",
+		img: PATH_IMG + 'dynamic.png'
 	},
 	{
 		description: "Набор страницы как лендинг, так и многостраничных",
@@ -88,7 +93,8 @@ export const project: IProject[] = [
 				{ name: "JS",type: "front" },
 				{ name: "Wordpress",type: "front" },
 			],
-		link: "https://github.com/StrongerProgrammer7/setWebSites"
+		link: "https://github.com/StrongerProgrammer7/setWebSites",
+		img: PATH_IMG + 'websites.png'
 	},
 ];
 
@@ -128,7 +134,8 @@ export const projectEng: IProject[] = [
 				{ name: "Solidity",type: "front" },
 				{ name: "TACT",type: "front" }
 			],
-		link: "https://github.com/StrongerProgrammer7/bridge_ton_eth_through_db"
+		link: "https://github.com/StrongerProgrammer7/bridge_ton_eth_through_db",
+		img: PATH_IMG + 'Medicine.png'
 	},
 	{
 		description: "The user can create, edit and delete weather data. The main part of the data, including weather information, filled data and weather type, is taken from the server. Functionality is implemented to ensure intuitive user interaction with weather data, including real-time data management and error handling to improve user experience.",
@@ -144,7 +151,8 @@ export const projectEng: IProject[] = [
 				{ name: "axios",type: "front" },
 				{ name: "SCSS",type: "front" },
 			],
-		link: "https://github.com/StrongerProgrammer7/DataAboutWeather"
+		link: "https://github.com/StrongerProgrammer7/DataAboutWeather",
+		img: PATH_IMG + 'weather.png'
 	},
 	{
 		description: "The form writes data to storage, after sending the data is sent to the server. Implemented 'lazy loading' and AuthGuard, preventing repeated access to the form after the survey is completed.",
@@ -157,7 +165,8 @@ export const projectEng: IProject[] = [
 				{ name: "Redux/persist",type: "front" },
 				{ name: "Vite",type: "front" },
 			],
-		link: "https://github.com/StrongerProgrammer7/DataAboutWeather"
+		link: "https://github.com/StrongerProgrammer7/rutube",
+		img: PATH_IMG + 'rutube.png'
 	},
 	{
 		description: "Dynamic creation of records in the table taking into account the hierarchy, as well as editing and deletion",
@@ -169,7 +178,8 @@ export const projectEng: IProject[] = [
 				{ name: "SCSS",type: "front" },
 				{ name: "Vite",type: "front" },
 			],
-		link: "https://github.com/StrongerProgrammer7/DynamicTable"
+		link: "https://github.com/StrongerProgrammer7/DynamicTable",
+		img: PATH_IMG + 'dynamic.png'
 	},
 	{
 		description: "Set of pages both landing and multi-page",
@@ -181,6 +191,7 @@ export const projectEng: IProject[] = [
 				{ name: "JS",type: "front" },
 				{ name: "Wordpress",type: "front" },
 			],
-		link: "https://github.com/StrongerProgrammer7/setWebSites"
+		link: "https://github.com/StrongerProgrammer7/setWebSites",
+		img: PATH_IMG + 'websites.png'
 	},
 ];	

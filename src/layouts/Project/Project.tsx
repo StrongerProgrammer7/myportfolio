@@ -5,13 +5,14 @@ import css from "./project.module.css";
 import Slider from "../../components/slider/Slider";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { IProject } from "../../utils/interfaces";
-import CircleBubble from "../../components/circleBubble/CircleBubble";
+import Bubble from "../../components/bubble/Bubble";
 import background from "../../assets/toDirectionDeep.jpg";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch } from "../../hooks/useTypedDispatch";
 import { project,projectEng } from "../../utils/data/projects";
 import { Locales } from "../../utils/enums";
 import { setItems,setSlide } from "../../models/slider";
+import BubbleContent from "../../components/bubble/content/BubbleContent";
 
 const Project = () => 
 {
@@ -96,30 +97,13 @@ const Project = () =>
 						items={showProjects} >
 						{
 							showProjects.map((project,ind) => (
-								<CircleBubble titleProject={project.briefly_name ?? project.name} key={"project-slider-" + ind}>
-
-									<div className={css.circle__content}>
-
-										<div className={css.circle__content_wrapper}>
-											<h3 className={css.circle__title}>{project.name}</h3>
-											<p className={css.circle__content_text}>{project.description}</p>
-											<div className={css.circle__content_stack}>
-												{
-													project.stack.map((elem,ind) => (
-														<span
-															key={"project-slider-stack-" + ind}
-															className={elem.type === "front" ? css.card_front : css.default_background}>{elem.name}</span>
-													))
-												}
-											</div>
-											{
-												project.link &&
-												<a className={css.circle__content_btn} href={project.link}> More info </a>
-											}
-										</div>
-
-									</div>
-								</CircleBubble>
+								<Bubble
+									title={project.briefly_name ?? project.name}
+									key={"project-slider-" + ind}>
+									<BubbleContent
+										item={project}
+									/>
+								</Bubble>
 							))
 						}
 

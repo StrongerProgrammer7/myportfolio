@@ -8,17 +8,15 @@ import Arrows from "./components/Arrows/Arrows";
 import Dots from "./components/Dots/Dots";
 import SlidesList from "./components/SlidesList/SlidesList";
 import { useMediaQuery } from "react-responsive";
-import { IProject } from "../../utils/interfaces";
 
 
 interface ISliderComponent<T> extends PropsWithChildren
 {
-	items: IProject[];
+	items: T[];
 	width: string;
 	height: string;
 	autoPlayTime: number;
 	autoPlay: boolean;
-	data?: T[];
 }
 
 const Slider = <T,>({ items,width = "100%",height = "100%",autoPlay = false,autoPlayTime = 5000,children }: ISliderComponent<T>) =>

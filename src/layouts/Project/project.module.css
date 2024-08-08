@@ -23,88 +23,6 @@
 	margin-top:20px;
 }
 
-		
-.circle__content
-{
-	clip-path: circle(50% at 50% 50%);
-    height: 100%;
-}
-
-
-.circle__content_wrapper
-{
-	margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-}
-.circle__content_text
-{
-	text-align: center;
-    font-size: 18px;
-	color:#fff;
-    width: 70%;
-	font-family: -apple-system, BlinkMacSystemFont,'Segoe UI', Roboto, Oxygen,
-  Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-  cursor: default;
-  user-select:none;
-}
-
-.circle__content_stack
-{
-	display: flex;
-    gap: 10px;
-    margin: 10px 0;
-    flex-wrap: wrap;
-    padding: 0 50px;
-    justify-content: center;
-}
-
-.circle__content_stack span
-{
-	font-size: 20px;
-    color: white;
-    border-radius: 5px;
-    padding: 1px 10px;
-}
-
-.circle__content_btn
-{
-    padding: 2px 60px;
-    background: white;
-    border-radius: 16px;
-    cursor: pointer;
-    font-size: 20px;
-    margin-top:50px;
-	color:black;
-}
-.circle__content_btn:hover
-{
-    color:#2FC0FE;
-}
-.circle__content_btn:visited
-{
-	color:#7700ff;
-}
-
-.default_background
-{
-	background: #7700ff;
-}
-
-.card_front
-{
-	background: #2FC0FE;
-}
-
-.card_back
-{
-	background: #730CDA;
-}
-
 .projects_empty
 {
 	text-align: center;
@@ -113,39 +31,9 @@
     padding: 30px;
 }
 
-.circle__title
-{
-    text-align: center;
-    font-size: 18px;
-    color: #fff;
-    width: 50%;
-    font-family: -apple-system, BlinkMacSystemFont,'Segoe UI', Roboto, Oxygen,
-  Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;
-    cursor: default;
-    user-select: none;
-}
 
 @media screen and (max-width:700px) 
 {
-    .circle__content_text
-    {
-        font-size: 14px;
-    }
-    .circle__content_stack span
-    {
-        font-size: 15px;
-    }
-    .circle__title
-    {
-        font-size: 16px;
-    }
-    .circle__content_btn
-    {
-        padding: 2px 36px;
-        font-size: 16px;
-        margin-top:15px;
-    }
 
     .projects_searching
     {

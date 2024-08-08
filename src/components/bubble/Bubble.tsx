@@ -1,18 +1,18 @@
 import { FC,PropsWithChildren } from "react";
-import css from "./circlebubble.module.css";
+import css from "./bubble.module.css";
 import { useMediaQuery } from "react-responsive";
 
-interface ICircleProject extends PropsWithChildren
+interface IBubble extends PropsWithChildren
 {
-	titleProject: string;
+	title: string;
 }
-const CircleBubble: FC<ICircleProject> = ({ titleProject,children }) =>
+const Bubble: FC<IBubble> = ({ title,children }) =>
 {
 	const isTableOrMobile = useMediaQuery({ query: '(max-width: 700px)' });
 	const distentionBetweenLetter = isTableOrMobile ? 125 : 165;
-	const textLength = titleProject.length;
-	const characters = titleProject.split('');
-	const countWords = titleProject.trim().split(' ').length;
+	const textLength = title.length;
+	const characters = title.split('');
+	const countWords = title.trim().split(' ').length;
 	const startStep = countWords > 1 ? distentionBetweenLetter : 80;
 	const angleStep = startStep / (textLength - 1);
 	const startAngle = countWords > 1 ? 290 : 320;
@@ -41,4 +41,4 @@ const CircleBubble: FC<ICircleProject> = ({ titleProject,children }) =>
 	);
 };
 
-export default CircleBubble;
+export default Bubble;

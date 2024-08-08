@@ -12,6 +12,7 @@ export interface IProject
 	name: string;
 	briefly_name?: string;
 	link?: string;
+	img?: string;
 }
 
 export interface IInformation
