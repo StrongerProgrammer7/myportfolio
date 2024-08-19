@@ -3,6 +3,7 @@ import css from './card.module.css';
 import { IProject } from '../../utils/interfaces';
 import StackCard from '../stack_card/StackCard';
 import Link from '../Ui/a/link/Link';
+import { useTranslation } from 'react-i18next';
 
 interface ICard
 {
@@ -10,7 +11,7 @@ interface ICard
 }
 const Card: React.FC<ICard> = ({ item }) => 
 {
-
+	const { t } = useTranslation();
 	return (
 		<div className={css.card}>
 			{item.img && <div className={css.card__wrapper_img}>
@@ -32,7 +33,7 @@ const Card: React.FC<ICard> = ({ item }) =>
 					}
 				</div>
 				{
-					item.link && <Link title='Go to repo' href={item.link} extraClass={css.content__link} />
+					item.link && <Link title={t('project.more_info')} href={item.link} extraClass={css.content__link} />
 				}
 			</div>
 		</div>

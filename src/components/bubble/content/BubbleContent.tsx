@@ -3,6 +3,7 @@ import css from './bubblecontent.module.css';
 import { IProject } from '../../../utils/interfaces';
 import StackCard from '../../stack_card/StackCard';
 import Link from '../../Ui/a/link/Link';
+import { useTranslation } from 'react-i18next';
 
 interface IBubbleContent
 {
@@ -10,6 +11,7 @@ interface IBubbleContent
 }
 const BubbleContent: React.FC<IBubbleContent> = ({ item }) =>
 {
+	const { t } = useTranslation();
 	return (
 		<div className={css.circle__content}>
 			<div className={css.circle__content_wrapper}>
@@ -27,7 +29,7 @@ const BubbleContent: React.FC<IBubbleContent> = ({ item }) =>
 					}
 				</div>
 				{
-					item.link && <Link title='Go to repo' href={item.link} />
+					item.link && <Link title={t('project.more_info')} href={item.link} />
 				}
 			</div>
 

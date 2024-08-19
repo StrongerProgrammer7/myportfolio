@@ -1,3 +1,4 @@
+import AboutMe from "../layouts/AboutMe/AboutMe";
 import Greeting from "../layouts/Greeting/Greeting";
 import Project from "../layouts/Project/Project";
 import Skill from "../layouts/Skill/Skill";
@@ -10,6 +11,7 @@ const Main = () =>
 			<Greeting />
 			<Skill />
 			<Project />
+			<AboutMe />
 		</main>
 	);
 };
