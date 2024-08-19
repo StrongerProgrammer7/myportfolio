@@ -1,15 +1,17 @@
 .skills_controls__searching
 {
 	position: relative;
+	max-width:300px;
+	width: 100%;
 }
 .searching_input
 {
 	border: 1px solid white;
 	background: #ffffff00;
 	padding:5px 45px 5px 10px;
-	font-size:24px;
+	font-size:var(--fz-small);
 	color:white;
-	width: 300px;
+	width: 100%;
 }
 
 .searching_input::placeholder
@@ -23,14 +25,13 @@
 .searching_icon
 {
 	position: absolute;
-	
-	
+	width: 40px;
 }
 
 .icon_search
 {
 	visibility: hidden;
-	opacity: 0;
+	opacity: var(--opacity-zero);
 	top:0;
 	right:5px;
 	transition: visibility 0s linear 300ms, opacity 300ms;
@@ -38,8 +39,9 @@
 
 .icon_close
 {
+	width: 30px;
 	visibility: hidden;
-	opacity: 0;
+	opacity: var(--opacity-zero);
 	top:6px;
 	right:5px;
 	cursor: pointer;
@@ -50,7 +52,7 @@
 .icon_view
 {
 	visibility: visible;
-	opacity: 1;
+	opacity: var(--opacity-full);
 	transition: visibility 0s linear 0s, opacity 300ms; 
 }
 
@@ -63,4 +65,27 @@
 .icon_close:active
 {
 	transform:scale(0.8);
+}
+
+
+@media screen and (max-width:468px) 
+{
+	.searching_input
+	{
+		font-size: var(--fz-smaller);
+	}
+	
+	.searching_icon
+	{
+		width: 28px;
+	}
+	.icon_search
+	{
+		top: 2px;
+    	right: 10px;
+	}
+	.icon_close
+	{
+		width: 25px;
+	}
 }

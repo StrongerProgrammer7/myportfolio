@@ -1,4 +1,5 @@
 import Greeting from "../layouts/Greeting/Greeting";
+import Project from "../layouts/Project/Project";
 import Skill from "../layouts/Skill/Skill";
 
 
@@ -8,6 +9,7 @@ const Main = () =>
 		<main>
 			<Greeting />
 			<Skill />
+			<Project />
 		</main>
 	);
 };

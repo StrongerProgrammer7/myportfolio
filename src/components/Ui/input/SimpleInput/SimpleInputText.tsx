@@ -12,8 +12,9 @@ interface ISimpleInputText
 	value: string;
 	onChange: (value: string) => void;
 	setText: React.Dispatch<React.SetStateAction<string>>;
+	width?: number;
 }
-const SimpleInputText: FC<ISimpleInputText> = ({ value,placeholder,onChange,setText }) => 
+const SimpleInputText: FC<ISimpleInputText> = ({ value,placeholder,onChange,setText,width }) => 
 {
 
 	const debounced = useCallback(useDebounce(onChange,500),[]);
@@ -31,7 +32,7 @@ const SimpleInputText: FC<ISimpleInputText> = ({ value,placeholder,onChange,setT
 		debounced(e.target.value);
 	};
 	return (
-		<div className={css.skills_controls__searching}>
+		<div className={css.skills_controls__searching} style={{ width: width }}>
 			<input
 				type="text"
 				value={value}

@@ -22,26 +22,26 @@
 
 input.check_toggle_round_flat:checked ~ .off 
 {
-  color: #AFE80F;
+  color: var(--liam-li);
 }
 
 input.check_toggle_round_flat:checked ~ .on 
 {
-  color: #7C7C7C;
+  color: var(--gray-li);
 }
 
 .switch > span.on 
 {
   left: 0;
   padding-left: 2px;
-  color: #AFE80F;
+  color: var(--liam-li);
 }
 
 .switch > span.off 
 {
   right: 0;
   padding-right: 4px;
-  color: #7C7C7C;
+  color: var(--gray-li);
 }
 
 .check_toggle 
@@ -87,4 +87,17 @@ input.check_toggle_round_flat + label::after
 input.check_toggle_round_flat:checked + label::after 
 {
   background: linear-gradient(270deg, rgba(100,189,227,1) 0%, rgba(34,40,180,1) 100%);
+}
+
+
+@media screen and (max-width: 850px) 
+{
+  .switch > span 
+  {
+    font-size: 14px;
+  }  
+  input.check_toggle_round_flat + label 
+  {
+    width: 65px;
+  }
 }

@@ -1,0 +1,23 @@
+.li
+{
+	cursor: pointer;
+	/* animation: 3.5s infinite alternate change_color_list; */
+}
+
+.li:hover
+{
+	color:white;
+	animation: none;
+}
+
+@keyframes change_color_list 
+{
+  from 
+  {
+	  color:var(--gray-li);
+  }	
+  to
+  {
+	  color:white;
+  }
+}

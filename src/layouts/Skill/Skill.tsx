@@ -6,15 +6,16 @@ import SimpleInputText from "../../components/Ui/input/SimpleInput/SimpleInputTe
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 import { Locales,TypeSkill } from "../../utils/enums";
 import { ISkill } from "../../utils/interfaces";
-import { Filter,getRandomDelayAnim,getSkillsByName } from "./utils";
+import { Filter,getRandomDelayAnim,getRandomRotateBlocks,getSkillsByName } from "./utils";
 import { useAppDispatch } from "../../hooks/useTypedDispatch";
 import { setSkills } from "../../models/information";
 import skillsEN from "../../utils/data/skills";
 import { skillsRu } from "../../utils/data/skills";
-
+import Pattern from "../../components/pattern/Pattern";
+import background from "../../assets/Up.png";
 const Skill = () => 
 {
-	const skills = useTypedSelector((state) => state.skills);
+	const skills = useTypedSelector((state) => state.information.skills);
 	const dispatch = useAppDispatch();
 	const { t,i18n } = useTranslation();
 
@@ -38,25 +39,14 @@ const Skill = () =>
 	{
 		setShowSkills(skills);
 	},[skills]);
+
 	useEffect(() =>
 	{
 		if (isFirstShow)
 			return;
 		const interval = setInterval(() =>
 		{
-			const MAX = 5;
-			let ind = 0;
-			setRotatingSkills(new Set());
-			const newRotatingSkills = new Set();
-			const numberOfSkillsToRotate = Math.floor(Math.random() * showSkills.length);
-			while (newRotatingSkills.size < numberOfSkillsToRotate && ind < MAX)
-			{
-				const randomIndex = Math.floor(Math.random() * showSkills.length);
-				ind++;
-				newRotatingSkills.add(randomIndex);
-			}
-
-			setRotatingSkills(newRotatingSkills);
+			setRotatingSkills(getRandomRotateBlocks(showSkills));
 		},5000);
 
 		return () => clearInterval(interval);
@@ -116,63 +106,70 @@ const Skill = () =>
 	),[i18n.resolvedLanguage]);
 
 	return (
-		<section className={css.myskills}>
-			<div className={css.myskills__background}></div>
-			<div className={"container " + css.myskills_content}>
-				<h1 className={css.myskills_content__title}>{t("header.myskills")} </h1>
-				<div className={css.skills}>
-					<div className={css.skills_controls}>
-						<div className={css.skills_controls__filter}>
-							{
-								filters.map((filter,ind) => (
-									<SimpleRadio
-										key={ind}
-										defaultChecked={ind === 0}
-										value={filter.value}
-										label={filter.label}
-										colorText="white"
-										onChange={(val) => handleChange(val,true)}
-									/>
-								))
-							}
-						</div>
-						<SimpleInputText
-							setText={setSearch}
-							value={search}
-							placeholder={t("skill.find")}
-							onChange={handleChange}
-						/>
+		<Pattern
+			img={background}
+			title={t("header.myskills")}
+			classNames={
+				{
+					section: css.myskills,
+					block_content: css.myskills_content
+				}
 
-					</div>
+			}>
+			<div className={css.skills_controls}>
+				<div className={css.skills_controls__filter}>
 					{
-						showSkills.length > 0 &&
-						<div className={css.skills_cards}>
-							{
-								!isLoad
-									?
-									showSkills.map((skill,ind) => (
-										<div
-											key={ind}
-											className={`${css.skills_cards__card} 
+						filters.map((filter,ind) => (
+							<SimpleRadio
+								key={ind}
+								defaultChecked={ind === 0}
+								value={filter.value}
+								label={filter.label}
+								colorText="white"
+								onChange={(val) => handleChange(val,true)}
+							/>
+						))
+					}
+				</div>
+				<SimpleInputText
+					setText={setSearch}
+					value={search}
+					placeholder={t("skill.find")}
+					onChange={handleChange}
+				/>
+
+			</div>
+			<div className={css.skills}>
+
+				{
+					showSkills.length > 0 &&
+					<div className={css.skills_cards}>
+						{
+							!isLoad
+								?
+								showSkills.map((skill,ind) => (
+									<p
+										key={ind}
+										className={`${css.skills_cards__card} 
 											${getClassByTypeSkill(skill.type)} 
 											${rotatingSkills.has(ind) ? css.skill_rotate : ''}
 											${isFirstShow ? getRadnomDirectionAppearance() : ""}`}
-											style={{ animationDelay: `${getRandomDelayAnim()}` }}>
-											{skill.name}
-										</div>
-									))
-									:
-									<p>Loading...</p>
-							}
-						</div>
-					}
-					{
-						showSkills.length === 0 &&
-						<p className={css.skills_empty}> {t("skill.study")} &#61;&#41; </p>
-					}
-				</div>
+										style={{ animationDelay: `${getRandomDelayAnim()}` }}>
+										{skill.name}
+									</p>
+								))
+								:
+								<p>Loading...</p>
+						}
+					</div>
+				}
+				{
+					showSkills.length === 0 &&
+					<p className={css.skills_empty}> {t("skill.study")} &#61;&#41; </p>
+				}
 			</div>
-		</section>
+		</Pattern>
+
 	);
 };
 

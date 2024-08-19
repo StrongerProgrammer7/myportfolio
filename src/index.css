@@ -187,7 +187,31 @@ img {
 }
 
 /* --------------- базовые настройки --------- */
+:root
+{
+  --gray-li: #7C7C7C;
+  --liam-li: #AFE80F;
+  /*font-size-var*/
+  --fz-big: 50px;
+  --fz-medium: 40px;
+  --fz-small:24px;
+  --fz-smaller:20px;
+  --fz-very-small:14px;
+  --fz-extra-small:8px;
 
+  /*opacity-var*/
+  --opacity-medium:0.5;
+  --opacity-full:1;
+  --opacity-zero:0;
+
+  /*size-screen-var*/
+  --mobile-size:428px;
+  --mobile-min-size:320px;
+  --tablet-big-size:1000px;
+  --tablet-size:768px;
+  --tablet-min-size: 520px;
+  
+}
 .container
 {
   max-width: 1280px;

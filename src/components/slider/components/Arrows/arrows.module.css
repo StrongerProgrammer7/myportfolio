@@ -1,0 +1,68 @@
+	.arrow 
+	{
+	  height: 30px;
+	  width: 30px;
+	  position: absolute;
+	  top: 40%;
+	  z-index: 1;
+	}
+	  .arrow:hover 
+	  {
+		cursor: pointer;
+	  }
+
+	  .arrow_left 
+	  {
+		background-image: url("../../../../assets/arrow.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		margin-left: 120px;
+		transform: rotate(
+180deg);
+		left: 0;
+	  }
+
+	  .arrow_right 
+	  {
+		background-image: url("../../../../assets/arrow.png");
+		background-repeat: no-repeat;
+		background-size: contain;
+		margin-right: 120px;
+		right: 0;
+	  }
+.arrow_left,
+.arrow_right
+{
+	transition: transform linear 0.1s;
+}
+.arrow_left:active
+{
+	transform:rotate(180deg) scale(0.9);
+}
+.arrow_right:active
+{
+	transform:scale(0.9);
+}
+@media screen and (max-width:900px) 
+{
+	.arrow_left
+	{
+		margin-left:0;
+	}
+	.arrow_right
+	{
+		margin-right:0;
+	}
+}
+
+@media screen and (max-width:480px) 
+{
+	.arrow_left
+	{
+		margin-left:-10px;
+	}
+	.arrow_right
+	{
+		margin-right:-10px;
+	}
+}
