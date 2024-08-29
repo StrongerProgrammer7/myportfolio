@@ -19,7 +19,27 @@
 	"project":
 	{
 		"find_skill":"find project by skill",
-		"find_name":"find project by name"
+		"find_name":"find project by name",
+		"more_info":"Go to repo",
+		"project_not_find":"Sorry, project don't find"
+	},
+	"aboutme":
+	{
+		"history":
+		{
+			"title":"History",
+			"text":"Graduated from Kuban State University of Russia, majoring in Fundamental Informatics and Information Technologies. Also completed the course at the HH.RU school for Front-End Developer."
+		},
+		"study":
+		{
+			"title":"Study",
+			"text":"Now I'm studying for a master's degree in absentia, also improving my skills in solving various algorithmic problems and trying new things in front-end development."
+		},
+		"goal":
+		{
+			"title":"Goal",
+			"text":"Upgrade to React middle+ in a year"
+		}
 	},
 	"total":
 	{

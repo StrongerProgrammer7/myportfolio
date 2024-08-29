@@ -1,0 +1,30 @@
+.aboutme__content
+{
+	padding: 25px 0;
+}
+
+.aboutme__wrapper
+{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap:30px;
+	margin:50px 0;
+}
+
+.aboutme__card
+{
+	color:white;
+	max-width: 250px;
+	text-align: center;
+}
+.aboutme__card h2
+{
+	font-size: 48px;
+	font-weight: normal;
+}
+
+.aboutme__card p
+{
+	font-size: 18px;
+}

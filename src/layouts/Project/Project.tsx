@@ -126,7 +126,7 @@ const Project = () =>
 
 				{
 					showProjects.length === 0 &&
-					<p className={css.projects_empty}> Sorry, project don't find </p>
+					<p className={css.projects_empty}> {t('project.project_not_find')} </p>
 				}
 			</div>
 		</Pattern>
