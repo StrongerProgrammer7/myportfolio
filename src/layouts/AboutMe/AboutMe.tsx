@@ -4,7 +4,7 @@ import Pattern from '../../components/pattern/Pattern';
 import { useTranslation } from 'react-i18next';
 const AboutMe = () => 
 {
-	const { t,i18n } = useTranslation();
+	const { t } = useTranslation();
 
 	return (
 		<Pattern
