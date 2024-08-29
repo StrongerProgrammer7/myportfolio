@@ -1,0 +1,49 @@
+.footer
+{
+    background: black;
+    color: white;
+    padding: 0 20px;
+	margin: -1px 0;
+}
+
+.footer_content
+{
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__author
+{
+	font-size: 24px;
+}
+.footer__contacts
+{
+	display: flex;
+    flex-wrap: nowrap;
+    gap: 30px;
+    align-items: center;
+}
+
+.contact
+{
+	width: 30px;
+	transition: transform 0.2s linear;
+}
+
+.contact:hover
+{
+	transform:scale(1.05);
+}
+.contact:active
+{
+	transform:scale(0.9);
+}
+
+@media screen and (max-width: 380px) 
+{
+	.footer__author
+	{
+		font-size: 16px;
+	}	
+}
